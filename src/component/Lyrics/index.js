@@ -101,7 +101,7 @@ const Lyrics = () => {
 
                 <label className="mt-5 form-label h5 ms-3">Project Tags</label>
                 <select
-                  className="form-control "
+                  className="form-control"
                   name="choices-multiple-remove-button"
                   id="choices-multiple-remove-button"
                   multiple

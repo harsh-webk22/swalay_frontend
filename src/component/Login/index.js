@@ -1,4 +1,5 @@
 import logo from "../../assets/img/SwaLay.webp";
+import "./index.css";
 
 const Login = () => {
   return (
