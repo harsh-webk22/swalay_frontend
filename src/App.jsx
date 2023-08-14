@@ -1,11 +1,11 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "./component/Dashboard";
-import Album from "./component/Album";
-import Lyrics from "./component/Lyrics";
-import Login from "./component/Login";
-import AddAlbum from "./component/AddAlbum";
-import Payment from "./component/Payment";
+import Dashboard from "./component/Client/Dashboard";
+import Album from "./component/Client/Album";
+import Lyrics from "./component/Client/Lyrics";
+import Login from "./component/Client/Login";
+import AddAlbum from "./component/Client/AddAlbum";
+import Payment from "./component/Client/Payment";
 
 const router = createBrowserRouter([
   {

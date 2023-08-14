@@ -1,4 +1,4 @@
-import logo from "../../assets/img/SwaLay.webp";
+import logo from "../../../assets/img/SwaLay.webp";
 const Sidebar = () => {
   return (
     <aside
