@@ -27,7 +27,7 @@ const Payment = () => {
                 </div>
 
                 <div className="table-responsive">
-                  <table className="table" id="datatable-search" >
+                  <table className="table bg-grey-200 table-dark" id="datatable-search" >
                     <thead className="thead-dark">
                       <tr>
                         <th>#</th>
