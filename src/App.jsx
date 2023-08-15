@@ -6,6 +6,8 @@ import Lyrics from "./component/Client/Lyrics";
 import Login from "./component/Client/Login";
 import AddAlbum from "./component/Client/AddAlbum";
 import Payment from "./component/Client/Payment";
+import AddLabel from "./component/Admin/AddLabel";
+import Profile from "./component/Client/Profile"
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
   {
     path: "/payments",
     element: <Payment />,
+  },
+  {
+    path: "/addLabel",
+    element: <AddLabel />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
 ]);
 

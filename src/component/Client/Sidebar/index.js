@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import logo from "../../../assets/img/SwaLay.webp";
+
 const Sidebar = () => {
   return (
     <aside
@@ -11,14 +13,10 @@ const Sidebar = () => {
           aria-hidden="true"
           id="iconSidenav"
         ></i>
-        <a
-          className="navbar-brand m-0"
-          href=" https://demos.creative-tim.com/material-dashboard-pro/pages/dashboards/analytics.html "
-          target="_blank"
-        >
+        <Link className="navbar-brand m-0" to="/">
           <img src={logo} className="navbar-brand-img h-100" alt="main_logo" />
           <span className="ms-1 font-weight-bold text-white"></span>
-        </a>
+        </Link>
       </div>
 
       <hr className="horizontal light mt-0 mb-2" />
@@ -36,32 +34,30 @@ const Sidebar = () => {
               role="button"
               aria-expanded="true"
             >
-              <img src="../../assets/img/team-3.jpg" className="avatar" />
+              <img
+                src="../../assets/img/team-3.jpg"
+                className="avatar"
+                alt=""
+              />
               <span className="nav-link-text ms-2 ps-1">Raghav</span>
             </a>
             <div className="collapse" id="ProfileNav">
               <ul className="nav ">
                 <li className="nav-item">
-                  <a
-                    className="nav-link text-white"
-                    href="../../pages/profile/myprofile.html"
-                  >
+                  <Link className="nav-link text-white" to="/profile">
                     <span className="sidenav-mini-icon"> </span>
                     <span className="sidenav-normal  ms-3  ps-1">
                       {" "}
                       My Profile{" "}
                     </span>
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="nav-item">
-                  <a
-                    className="nav-link text-white "
-                    href="../../pages/authentication/signin/basic.html"
-                  >
+                  <Link className="nav-link text-white " to="/login">
                     <span className="sidenav-mini-icon"> </span>
                     <span className="sidenav-normal  ms-3  ps-1"> Logout </span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -82,42 +78,33 @@ const Sidebar = () => {
             <div className="collapse  show " id="dashboardsExamples">
               <ul className="nav ">
                 <li className="nav-item active">
-                  <a
-                    className="nav-link text-white active"
-                    href="../../pages/dashboards/home.html"
-                  >
+                  <Link className="nav-link text-white active" to="/">
                     <span className="sidenav-normal  ms-2  ps-1"> Home </span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item ">
-                  <a
-                    className="nav-link text-white "
-                    href="../../pages/dashboards/all_albums.html"
-                  >
+                  <Link className="nav-link text-white " to="/add_album">
                     <span className="sidenav-normal  ms-2  ps-1">
                       {" "}
                       Music Release{" "}
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item ">
-                  <a
+                  <Link
                     className="nav-link text-white "
-                    href="../../pages/dashboards/sales.html"
+                    to="/payments"
                   >
                     <span className="sidenav-normal  ms-2  ps-1">
                       {" "}
                       Reports{" "}
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item ">
-                  <a
-                    className="nav-link text-white "
-                    href="../../pages/dashboards/Lyrics.html"
-                  >
+                  <Link className="nav-link text-white " to="lyrics">
                     <span className="sidenav-normal  ms-2  ps-1"> Lyrics </span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item ">
                   <a
