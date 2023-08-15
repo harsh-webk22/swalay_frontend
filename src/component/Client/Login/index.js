@@ -3,7 +3,10 @@ import "./index.css";
 
 const Login = () => {
   return (
-    <div className="main-w3layouts wrapper dark-version">
+    <div
+      className="main-w3layouts wrapper dark-version"
+      style={{ backgroundColor: "black", height: "100vh", overflow: "scroll" }}
+    >
       <div className="cen">
         <img src={logo} className="navbar-brand-img h-100" alt="main_logo" />
       </div>

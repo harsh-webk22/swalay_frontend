@@ -2,7 +2,10 @@ import Sidebar from "../Sidebar";
 
 const AddAlbum = () => {
   return (
-    <div className="g-sidenav-show  bg-gray-200 dark-version">
+    <div
+      className="g-sidenav-show  bg-gray-200 dark-version"
+      style={{ backgroundColor: "black", height: "100vh", overflow: "scroll" }}
+    >
       <Sidebar />
       <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <div className="container-fluid py-4">

@@ -102,7 +102,7 @@ const Sidebar = () => {
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="lyrics">
+                  <Link className="nav-link text-white " to="/lyrics">
                     <span className="sidenav-normal  ms-2  ps-1"> Lyrics </span>
                   </Link>
                 </li>

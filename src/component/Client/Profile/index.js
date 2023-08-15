@@ -2,7 +2,10 @@ import Sidebar from "../Sidebar";
 
 const Profile = () => {
   return (
-    <div className="g-sidenav-show bg-gray-200 dark-version ">
+    <div
+      className="g-sidenav-show bg-gray-200 dark-version"
+      style={{ backgroundColor: "black", height: "100vh", overflow: "scroll" }}
+    >
       <Sidebar />
 
       <main className="main-content max-height-vh-100 h-100">
@@ -19,7 +22,6 @@ const Profile = () => {
                       viewBox="0 0 45 40"
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
-                    //   xmlns:xlink="http://www.w3.org/1999/xlink"
                     >
                       <title>shop </title>
                       <g

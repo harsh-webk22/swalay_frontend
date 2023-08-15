@@ -3,13 +3,13 @@ import Sidebar from "../Sidebar";
 
 const Dashboard = () => {
   return (
-    <div className="g-sidenav-show  bg-gray-200 dark-version">
+    <div
+      className="g-sidenav-show  bg-gray-200 dark-version"
+      style={{ backgroundColor: "black", height: "100vh", overflow: "scroll" }}
+    >
       <Sidebar />
       <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        {/* <!-- Navbar -->
-    <!-- upper nav bar -->
-    <!-- End Navbar --> */}
-
+       
         <div className="container-fluid py-4">
           <div className="row">
             <div className="col-lg-12 position-relative z-index-2">
