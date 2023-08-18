@@ -18,20 +18,20 @@ const AddAlbum = () => {
                   </h3>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline dark-version">
                     <label for="projectName" className="form-label ">
                       Song or Album Title
                     </label>
                     <input
                       type="text"
-                      className="form-control  p-1 text-light bg-gradient-dark"
+                      className="form-control"
                       id="projectName"
                     />
                   </div>
                 </div>
 
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline dark-version">
                     <label for="projectName" className="form-label">
                       Main Artist
                     </label>
@@ -45,12 +45,12 @@ const AddAlbum = () => {
 
                 <div className="card-body pt-2">
                   <div className="mb-3 ">
-                    <label for="subcategory" className="form-label  ">
+                    <label for="subcategory" className="form-label">
                       Genre
                     </label>
                     <select
                       name="genre"
-                      className="p-1 form-select text-light bg-gradient-dark"
+                      className="p-1 form-select text-light dark-version"
                       required
                     >
                       <option className="bg-dark" value="">
@@ -141,7 +141,7 @@ const AddAlbum = () => {
                 </div>
 
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline dark-version">
                     <label for="projectName" className="form-label">
                       Record label
                     </label>
@@ -153,7 +153,7 @@ const AddAlbum = () => {
                   </div>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline dark-version">
                     <label for="projectName" className="form-label">
                       Upload from cloud (optional) - Google Drive link
                     </label>
@@ -172,7 +172,7 @@ const AddAlbum = () => {
                     </label>
                     <input
                       type="file"
-                      className="p-1 form-select"
+                      className="p-1 form-select dark-version"
                       id="inputGroupFile02"
                     />
                   </div>
@@ -180,12 +180,12 @@ const AddAlbum = () => {
 
                 <div className="card-body pt-2">
                   <div className=" input-group-dynamic ">
-                    <label for="projectName" className="form-label">
+                    <label for="projectName" className="form-label ">
                       Release Date
                     </label>
                     <input
                       type="date"
-                      className="p-1 text-light bg-gradient-dark form-select"
+                      className="p-1 text-light  form-select dark-version"
                     />
                   </div>
                 </div>
@@ -198,7 +198,7 @@ const AddAlbum = () => {
                     <select
                       name="language"
                       id="language"
-                      className="p-1 form-select text-light bg-gradient-dark"
+                      className="p-1 form-select text-light dark-version"
                       required
                     >
                       <option className="bg-dark" value="">
@@ -302,7 +302,7 @@ const AddAlbum = () => {
                 </div>
 
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline dark-version">
                     <label for="projectName" className="form-label">
                       Producer
                     </label>
@@ -314,7 +314,7 @@ const AddAlbum = () => {
                   </div>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline dark-version">
                     <label for="projectName" className="form-label">
                       Duration
                     </label>
@@ -334,7 +334,7 @@ const AddAlbum = () => {
                     <select
                       name="language"
                       id="language"
-                      className="p-1 form-select text-light"
+                      className="p-1 form-select text-light dark-version"
                       required
                     >
                       <option value="">℗ 2023 Anant Raghav</option>
@@ -347,7 +347,7 @@ const AddAlbum = () => {
                     <label for="name" className="form-label">
                       C Line
                     </label>
-                    <select name="cline" className="p-1 form-select text-light">
+                    <select name="cline" className="p-1 form-select text-light dark-version">
                       <option value="2023 Anant Raghav">
                         © 2023 Anant Raghav
                       </option>
