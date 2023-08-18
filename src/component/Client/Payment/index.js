@@ -31,26 +31,26 @@ const Payment = () => {
 
                 <div className="table-responsive">
                   <table
-                    className="table bg-grey-200 table-dark"
+                    className="table  bg-dark text-white"
                     id="datatable-search"
                   >
-                    <thead className="thead-dark">
+                    <thead className="thead-dark ">
                       <tr>
-                        <th>#</th>
-                        <th>Label Name</th>
-                        <th>Total Earning</th>
-                        <th>Payment History</th>
-                        <th>Pay Out Request</th>
+                        <th className="text-sm font-weight-normal dark-version">#</th>
+                        <th className="text-sm font-weight-normal dark-version" >Label Name</th>
+                        <th className="text-sm font-weight-normal dark-version">Total Earning</th>
+                        <th className="text-sm font-weight-normal dark-version">Payment History</th>
+                        <th className="text-sm font-weight-normal dark-version">Pay Out Request</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td className="text-sm font-weight-normal">1</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">1</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           JJSKY Music
                         </td>
-                        <td className="text-sm font-weight-normal"> 1001</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version"> 1001</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
                             className="mb-0 btn btn-icon bg-gradient-primary"
@@ -58,7 +58,7 @@ const Payment = () => {
                             Show History
                           </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
                             className="mb-0 btn btn-icon btn-secondary"
@@ -68,20 +68,20 @@ const Payment = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">2</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">2</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           Krishna x Prajapati Pvt. Ltd.
                         </td>
-                        <td className="text-sm font-weight-normal">1682.58</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">1682.58</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
+                            className="mb-0 btn btn-icon bg-gradient-primary dark-version"
                           >
                             Show History
                           </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
                             className="mb-0 btn btn-icon btn-secondary"
@@ -91,18 +91,18 @@ const Payment = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">3</td>
-                        <td className="text-sm font-weight-normal">BeetaBie</td>
-                        <td className="text-sm font-weight-normal">1930.54</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">3</td>
+                        <td className="text-sm font-weight-normal dark-version">BeetaBie</td>
+                        <td className="text-sm font-weight-normal dark-version">1930.54</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
+                            className="mb-0 btn btn-icon bg-gradient-primary dark-version"
                           >
                             Show History
                           </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
                             className="mb-0 btn btn-icon btn-secondary"
@@ -112,20 +112,20 @@ const Payment = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">4</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">4</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           Baba Music Tune
                         </td>
-                        <td className="text-sm font-weight-normal">3632.56</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">3632.56</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
+                            className="mb-0 btn btn-icon bg-gradient-primary dark-version"
                           >
                             Show History
                           </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
                             className="mb-0 btn btn-icon btn-secondary"
@@ -135,20 +135,20 @@ const Payment = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">5</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">5</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           The AAR music production
                         </td>
-                        <td className="text-sm font-weight-normal">5388.03</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">5388.03</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
+                            className="mb-0 btn btn-icon bg-gradient-primary dark-version"
                           >
                             Show History
                           </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">
                           <a
                             href="*"
                             className="mb-0 btn btn-icon btn-secondary"
@@ -188,7 +188,7 @@ const Payment = () => {
                     <li className="nav-item">
                       <a
                         href="https://www.swalay.talantoncore.in/"
-                        className="nav-link text-muted"
+                        className="nav-link text-light"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -198,7 +198,7 @@ const Payment = () => {
                     <li className="nav-item">
                       <a
                         href="https://www.swalay.talantoncore.in/"
-                        className="nav-link text-muted"
+                        className="nav-link text-light"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -208,7 +208,7 @@ const Payment = () => {
                     <li className="nav-item">
                       <a
                         href="https://www.swalay.talantoncore.in/swalay-merch"
-                        className="nav-link text-muted"
+                        className="nav-link text-light"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -218,7 +218,7 @@ const Payment = () => {
                     <li className="nav-item">
                       <a
                         href="https://www.swalay.talantoncore.in/pricing"
-                        className="nav-link pe-0 text-muted"
+                        className="nav-link pe-0 text-light"
                         target="_blank"
                         rel="noreferrer"
                       >
