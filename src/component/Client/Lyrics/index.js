@@ -25,7 +25,7 @@ const Lyrics = () => {
                   </h3>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
                       Order Number/Label Name
                     </label>
@@ -37,7 +37,7 @@ const Lyrics = () => {
                   </div>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline ">
                     <label for="projectName" className="form-label">
                       Email Address
                     </label>
@@ -49,7 +49,7 @@ const Lyrics = () => {
                   </div>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
                       Phone Number
                     </label>
@@ -61,7 +61,7 @@ const Lyrics = () => {
                   </div>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline ">
                     <label for="projectName" className="form-label">
                       ISRC Code (if aplicable)
                     </label>
@@ -73,7 +73,7 @@ const Lyrics = () => {
                   </div>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
                       Writer Name
                     </label>
@@ -85,7 +85,7 @@ const Lyrics = () => {
                   </div>
                 </div>
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
+                  <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
                       Language Of Lyrics
                     </label>
@@ -97,35 +97,19 @@ const Lyrics = () => {
                   </div>
                 </div>
 
-                
-
-                <label className="mt-5 form-label h5 ms-3">Project Tags</label>
-                <select
-                  className="form-control"
-                  name="choices-multiple-remove-button"
-                  id="choices-multiple-remove-button"
-                  multiple
-                >
-                  <option value="Choice 1" selected>
-                    Choice 1
-                  </option>
-                  <option value="Choice 2">Choice 2</option>
-                  <option value="Choice 3">Choice 3</option>
-                  <option value="Choice 4">Choice 4</option>
-                </select>
-
-                <div className="input-group input-group-dynamic mt-4 ms-3 ">
-                  <label className="form-label  h5 mt-3">
+                <label className="form-label h5 ms-4 mt-2 ">
                     <u>
                       <b>Upload file</b>
                     </u>
                   </label>
+
+                <div className="input-group input-group-outline">                 
                   <form
                     action="/file-upload"
-                    className="form-control dropzone mt-7"
+                    className="form-control dropzone  m-4 "
                     id="dropzone"
                   >
-                    <div className="fallback">
+                    <div className="fallback mt-5 ms-10">
                       <input name="file" type="file" multiple />
                     </div>
                   </form>
@@ -134,14 +118,14 @@ const Lyrics = () => {
                   <button
                     type="button"
                     name="button"
-                    className="btn btn-light m-0"
+                    className="btn btn-light m-2 mb-3"
                   >
                     Cancel
                   </button>
                   <button
                     type="button"
                     name="button"
-                    className="btn bg-gradient-dark m-0 ms-2"
+                    className="btn bg-gradient-dark m-2 ms-4 mb-3"
                   >
                     Submit
                   </button>
@@ -175,7 +159,7 @@ const Lyrics = () => {
                   <li className="nav-item">
                     <a
                       href="https://www.swalay.talantoncore.in/"
-                      className="nav-link text-muted"
+                      className="nav-link text-light"
                       target="_blank"
                     >
                       Dashboard
@@ -184,7 +168,7 @@ const Lyrics = () => {
                   <li className="nav-item">
                     <a
                       href="https://www.swalay.talantoncore.in/"
-                      className="nav-link text-muted"
+                      className="nav-link text-light"
                       target="_blank"
                     >
                       About Us
@@ -193,7 +177,7 @@ const Lyrics = () => {
                   <li className="nav-item">
                     <a
                       href="https://www.swalay.talantoncore.in/swalay-merch"
-                      className="nav-link text-muted"
+                      className="nav-link text-light"
                       target="_blank"
                     >
                       Merch
@@ -202,7 +186,7 @@ const Lyrics = () => {
                   <li className="nav-item">
                     <a
                       href="https://www.swalay.talantoncore.in/pricing"
-                      className="nav-link pe-0 text-muted"
+                      className="nav-link pe-0 text-light"
                       target="_blank"
                     >
                       swalay

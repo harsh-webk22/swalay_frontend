@@ -11,10 +11,10 @@ const Album = () => {
         <div className="container-fluid py-3">
           <div className="row mt-1">
             <div className="col-12">
-              <div className="card">
+              <div className="card dark-version">
                 <div className="row mt-1">
                   <div className="col-12">
-                    <div className="card">
+                    <div className="card dark-version">
                       {/* <!-- Card header --> */}
                       <div className="card-header">
                         <h3 className="mb-0">
@@ -101,7 +101,7 @@ const Album = () => {
                           <li className="nav-item">
                             <a
                               href="https://www.swalay.talantoncore.in/"
-                              className="nav-link text-muted"
+                              className="nav-link text-light"
                               target="_blank"
                               rel="noreferrer"
                             >
@@ -111,7 +111,7 @@ const Album = () => {
                           <li className="nav-item">
                             <a
                               href="https://www.swalay.talantoncore.in/"
-                              className="nav-link text-muted"
+                              className="nav-link text-light"
                               target="_blank"
                               rel="noreferrer"
                             >
@@ -121,7 +121,7 @@ const Album = () => {
                           <li className="nav-item">
                             <a
                               href="https://www.swalay.talantoncore.in/swalay-merch"
-                              className="nav-link text-muted"
+                              className="nav-link text-light"
                               target="_blank"
                               rel="noreferrer"
                             >
@@ -131,7 +131,7 @@ const Album = () => {
                           <li className="nav-item">
                             <a
                               href="https://www.swalay.talantoncore.in/pricing"
-                              className="nav-link pe-0 text-muted"
+                              className="nav-link pe-0 text-light"
                               target="_blank"
                               rel="noreferrer"
                             >
