@@ -12,7 +12,7 @@ const Payment = () => {
         <div className="container-fluid py-4">
           <div className="row">
             <div className="col-12">
-              <div className="card">
+              <div className="card dark-version">
                 <div className="d-sm-flex justify-content-between">
                   <div className="card-header">
                     <h5 className="mb-0">Payments</h5>
