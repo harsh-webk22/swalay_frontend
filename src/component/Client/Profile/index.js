@@ -1,6 +1,46 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { apiendpoint } from "../../helper/apiendpoint";
 import Sidebar from "../Sidebar";
 
 const Profile = () => {
+  const navigate = useNavigate();
+
+  // Function to get all clients data
+  const fetchUser = async () => {
+    // Fetch token from localStorage
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    let res = await fetch(`${apiendpoint}/client/client_data`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!res.ok) {
+      alert("Authentication failed!");
+      return;
+    }
+
+    res = await res.json();
+    console.log(res);
+  };
+
+  useEffect(() => {
+    try {
+      fetchUser();
+    } catch (err) {
+      alert("Error occured in fetching your data");
+    }
+  }, []);
+
+  
   return (
     <div
       className="g-sidenav-show bg-gray-200 dark-version"
