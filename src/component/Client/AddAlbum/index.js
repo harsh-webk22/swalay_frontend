@@ -1,46 +1,9 @@
 import { useState } from "react";
 import { apiendpoint } from "../../helper/apiendpoint";
+import { langArr, genreArray } from "../../helper/utilArray";
 import Dropdown from "../../Dropdown";
 import Footer from "../../Footer";
 import Sidebar from "../Sidebar";
-
-// Language array
-const langArr = [
-  { name: "Hindi", value: "Hindi" },
-  { name: "Punjabi", value: "Punjabi" },
-  { name: "English", value: "English" },
-  { name: "Bengali", value: "Bengali" },
-  { name: "Gujarati", value: "Gujarati" },
-  { name: "Assamese", value: "Assamese" },
-  { name: "Malayalam", value: "Malayalam" },
-  { name: "Rajasthani", value: "Rajasthani" },
-  { name: "Konkani", value: "Konkani" },
-  { name: "Marathi", value: "Marathi" },
-  { name: "Gadwali", value: "Gadwali" },
-  { name: "Kannada", value: "Kannada" },
-  { name: "Bhojpuri", value: "Bhojpuri" },
-];
-
-// Genre array
-const genreArray = [
-  { name: "Pop", value: "pop" },
-  { name: "Film", value: "film" },
-  { name: "Folk", value: "folk" },
-  { name: " Devotional", value: "devotional" },
-  { name: "Traditional", value: "traditional" },
-  { name: "Instrumental", value: "instrumental" },
-  { name: "Western ClassNameical", value: "Western ClassNameical" },
-  { name: "Carnatic ClassNameical", value: "Carnatic ClassNameical" },
-  { name: "Spiritual", value: "Spiritual" },
-  { name: "English Pop", value: "English Pop" },
-  { name: "Gazal", value: "Gazal" },
-  { name: "Regional Pop", value: "Regional Pop" },
-  { name: "Lounge", value: "Lounge" },
-  { name: "Fusion", value: "Fusion" },
-  { name: "Hip Hop", value: "Hip Hop" },
-  { name: "Electronic", value: "Electronic" },
-  { name: "Rock", value: "Rock" },
-];
 
 const AddAlbum = () => {
   let albumDemoData = {
@@ -56,10 +19,38 @@ const AddAlbum = () => {
   };
 
   const [albumData, setAlbumData] = useState(albumDemoData);
+
+  // To store the artwork image link
   const [artwork, setArtwork] = useState("");
 
   // Upload image to S3 bucket
-  const handleImageUplaod = async () => {};
+  const handleImageUplaod = async (e) => {
+    const data = new FormData();
+    data.append("file", e.target.files[0]);
+    const token = localStorage.getItem("token");
+    try {
+      let res = await fetch(`${apiendpoint}/client/artwork`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: data,
+      });
+
+      if (!res.ok) {
+        alert("Authentication failed!");
+        return;
+      }
+
+      res = await res.json();
+      // Save the s3 bucket url of the artwork
+      setArtwork(res.url);
+      alert("Artwork successfully uploaded");
+    } catch (err) {
+      alert("Error in uploading artwork!");
+      return;
+    }
+  };
 
   // Function to post data
   const handleSubmit = async () => {
@@ -73,7 +64,7 @@ const AddAlbum = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(albumData),
+        body: JSON.stringify({...albumData, artwork}),
       });
 
       if (!res.ok) {
@@ -222,11 +213,7 @@ const AddAlbum = () => {
                       type="file"
                       className="p-1 form-select dark-version"
                       id="inputGroupFile02"
-                      onChange={(e) => {
-                        const data = new FormData();
-                        data.append("file", e.target.files[0]);
-                        console.log(data);
-                      }}
+                      onChange={handleImageUplaod}
                     />
                   </div>
                 </div>
@@ -346,7 +333,7 @@ const AddAlbum = () => {
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );
