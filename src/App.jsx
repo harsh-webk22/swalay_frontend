@@ -20,7 +20,6 @@ import AdminArtistProfile from "./component/Admin/ArtistProfile";
 import AdminPublishNotification from "./component/Admin/PublishNotification";
 import AdminProfile from "./component/Admin/AdminProfile";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,18 +53,17 @@ const router = createBrowserRouter([
     path: "/profile",
     element: <Profile />,
   },
-  {path:"/admin" ,element:<AdminDashboard />},
-  {path:"/AdminProfile" ,element:<AdminProfile />},
-  {path:"/adminAll_albums" ,element:<AdminAllAlbumsPage />},
-  {path:"/adminAll_Payment" ,element:<AdminAll_Payment />},
-  {path:"/adminLyrics" ,element:<AdminLyrics />},
-  {path:"/adminAllLabel" ,element:<AdminAllLabel />},
-  {path:"/adminalbum/:albumId" ,element:<AdminAlbumTrackPage />},
-  {path:"/adminInstagramLinking" ,element:<AdminInstagramLinkingForm />},
-  {path:"/adminLyricsSubmission" ,element:<AdminLyricsSubmission />},
-  {path:"/adminArtistProfile" ,element:<AdminArtistProfile/>},
-  {path:"/adminPublishNotification" ,element:<AdminPublishNotification />},
-  
+  { path: "/admin", element: <AdminDashboard /> },
+  { path: "/admin/profile", element: <AdminProfile /> },
+  { path: "/admin/All_albums", element: <AdminAllAlbumsPage /> },
+  { path: "/admin/all_Payment", element: <AdminAll_Payment /> },
+  { path: "/admin/lyrics", element: <AdminLyrics /> },
+  { path: "/admin/all_label", element: <AdminAllLabel /> },
+  { path: "/admin/album/:albumId", element: <AdminAlbumTrackPage /> },
+  { path: "/admin/instagramLinking", element: <AdminInstagramLinkingForm /> },
+  { path: "/admin/lyricsSubmission", element: <AdminLyricsSubmission /> },
+  { path: "/admin/artistProfile", element: <AdminArtistProfile /> },
+  { path: "/admin/publishNotification", element: <AdminPublishNotification /> },
 ]);
 
 const App = () => {

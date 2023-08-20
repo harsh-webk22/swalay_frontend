@@ -45,10 +45,7 @@
     padding: 3em;
   }
   
-  input[type="text"],
-  input[type="email"],
-  input[type="number"],
-  input[type="password"] {
+  input {
     font-size: 0.9em;
     color: #fff;
     font-weight: 100;
