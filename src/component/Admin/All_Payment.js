@@ -4,218 +4,194 @@ import { Container, Row, Col, Card, Button, Table } from "react-bootstrap";
 
 const AdminAll_Payment = () => {
   return (
-    <div
-      className="g-sidenav-show bg-gray-200 dark-version text-white"
-      style={{ minHeight: "100vh" }}
+<div
+      className="g-sidenav-show  bg-gray-200 dark-version"
+      style={{ backgroundColor: "black", height: "100vh", overflow: "scroll" }}
     >
       <Sidebar />
       <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-        <Container fluid className="py-4">
-          <Row>
-            <Col>
-              <Card className="bg-gradient-dark text-white">
+        <div className="container-fluid py-4">
+          <div className="row">
+            <div className="col-12">
+              <div className="card dark-version">
                 <div className="d-sm-flex justify-content-between">
-                  <Card.Header className="bg-transparent border-bottom border-white">
+                  <div className="card-header">
                     <h5 className="mb-0">Payments</h5>
-                  </Card.Header>
+                  </div>
                   <div className="d-flex card-header">
                     <div className="dropdown d-inline">
-                      <Button
+                      <a
                         href="../label_Activation.html"
                         className="mb-0 btn btn-icon bg-gradient-primary"
                       >
                         New Earn
-                      </Button>
+                      </a>
                     </div>
                   </div>
                 </div>
 
                 <div className="table-responsive">
-                  <Table
-                    className="table table-dark table-flush"
+                  <table
+                    className="table  bg-dark text-white"
                     id="datatable-search"
                   >
-                    <thead className="thead-light">
+                    <thead className="thead-dark ">
                       <tr>
-                        <th>#</th>
-                        <th>Label Name</th>
-                        <th>Total Earning</th>
-                        <th>Payment History</th>
-                        <th>Pay Out Request</th>
+                        <th className="text-sm font-weight-normal dark-version">#</th>
+                        <th className="text-sm font-weight-normal dark-version" >Label Name</th>
+                        <th className="text-sm font-weight-normal dark-version">Total Earning</th>
+                        <th className="text-sm font-weight-normal dark-version">Payment History</th>
+                        <th className="text-sm font-weight-normal dark-version">Pay Out Request</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td className="text-sm font-weight-normal">1</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="text-sm font-weight-normal dark-version">1</td>
+                        <td className="text-sm font-weight-normal dark-version">
                           JJSKY Music
                         </td>
-                        <td className="text-sm font-weight-normal">1001</td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
+                        <td className="text-sm font-weight-normal dark-version"> 1001</td>
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
                             className="mb-0 btn btn-icon bg-gradient-primary"
                           >
                             Show History
-                          </Button>
+                          </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
                             className="mb-0 btn btn-icon btn-secondary"
                           >
                             Paid
-                          </Button>
+                          </a>
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">1</td>
-                        <td className="text-sm font-weight-normal">
-                          JJSKY Music
+                        <td className="text-sm font-weight-normal dark-version">2</td>
+                        <td className="text-sm font-weight-normal dark-version">
+                          Krishna x Prajapati Pvt. Ltd.
                         </td>
-                        <td className="text-sm font-weight-normal">1001</td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
+                        <td className="text-sm font-weight-normal dark-version">1682.58</td>
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
+                            className="mb-0 btn btn-icon bg-gradient-primary dark-version"
                           >
                             Show History
-                          </Button>
+                          </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
                             className="mb-0 btn btn-icon btn-secondary"
                           >
                             Paid
-                          </Button>
+                          </a>
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">1</td>
-                        <td className="text-sm font-weight-normal">
-                          JJSKY Music
-                        </td>
-                        <td className="text-sm font-weight-normal">1001</td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
+                        <td className="text-sm font-weight-normal dark-version">3</td>
+                        <td className="text-sm font-weight-normal dark-version">BeetaBie</td>
+                        <td className="text-sm font-weight-normal dark-version">1930.54</td>
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
+                            className="mb-0 btn btn-icon bg-gradient-primary dark-version"
                           >
                             Show History
-                          </Button>
+                          </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
                             className="mb-0 btn btn-icon btn-secondary"
                           >
                             Paid
-                          </Button>
+                          </a>
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">1</td>
-                        <td className="text-sm font-weight-normal">
-                          JJSKY Music
+                        <td className="text-sm font-weight-normal dark-version">4</td>
+                        <td className="text-sm font-weight-normal dark-version">
+                          Baba Music Tune
                         </td>
-                        <td className="text-sm font-weight-normal">1001</td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
+                        <td className="text-sm font-weight-normal dark-version">3632.56</td>
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
+                            className="mb-0 btn btn-icon bg-gradient-primary dark-version"
                           >
                             Show History
-                          </Button>
+                          </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
                             className="mb-0 btn btn-icon btn-secondary"
                           >
                             Paid
-                          </Button>
+                          </a>
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">1</td>
-                        <td className="text-sm font-weight-normal">
-                          JJSKY Music
+                        <td className="text-sm font-weight-normal dark-version">5</td>
+                        <td className="text-sm font-weight-normal dark-version">
+                          The AAR music production
                         </td>
-                        <td className="text-sm font-weight-normal">1001</td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
+                        <td className="text-sm font-weight-normal dark-version">5388.03</td>
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
+                            className="mb-0 btn btn-icon bg-gradient-primary dark-version"
                           >
                             Show History
-                          </Button>
+                          </a>
                         </td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
+                        <td className="text-sm font-weight-normal dark-version">
+                          <a
+                            href="*"
                             className="mb-0 btn btn-icon btn-secondary"
+                            target="_blank"
+                            rel="noreferrer"
                           >
                             Paid
-                          </Button>
+                          </a>
                         </td>
                       </tr>
-                      <tr>
-                        <td className="text-sm font-weight-normal">1</td>
-                        <td className="text-sm font-weight-normal">
-                          JJSKY Music
-                        </td>
-                        <td className="text-sm font-weight-normal">1001</td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
-                            className="mb-0 btn btn-icon bg-gradient-primary"
-                          >
-                            Show History
-                          </Button>
-                        </td>
-                        <td className="text-sm font-weight-normal">
-                          <Button
-                            href="#"
-                            className="mb-0 btn btn-icon btn-secondary"
-                          >
-                            Paid
-                          </Button>
-                        </td>
-                      </tr>
-                      {/* Additional table rows go here */}
                     </tbody>
-                  </Table>
+                  </table>
                 </div>
-              </Card>
-            </Col>
-          </Row>
+              </div>
+            </div>
+          </div>
 
-          <footer className="footer py-4">
-            <Container fluid>
-              <Row className="align-items-center justify-content-lg-between">
-                <Col lg={6} mb-lg-0 mb-4>
+          <footer className="footer py-4  ">
+            <div className="container-fluid">
+              <div className="row align-items-center justify-content-lg-between">
+                <div className="col-lg-6 mb-lg-0 mb-4">
                   <div className="copyright text-center text-sm text-muted text-lg-start">
-                    © {new Date().getFullYear()}, made with{" "}
-                    <i className="fa fa-heart"></i> by
+                    ©<script>document.write(new Date().getFullYear())</script>,
+                    made with <i className="fa fa-heart"></i> by
                     <a
                       href="https://www.creative-tim.com"
                       className="font-weight-bold"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noreferrer"
                     >
                       Swalay
                     </a>
                   </div>
-                </Col>
-                <Col lg={6}>
+                </div>
+                <div className="col-lg-6">
                   <ul className="nav nav-footer justify-content-center justify-content-lg-end">
                     <li className="nav-item">
                       <a
                         href="https://www.swalay.talantoncore.in/"
-                        className="nav-link text-muted"
+                        className="nav-link text-light"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noreferrer"
                       >
                         Dashboard
                       </a>
@@ -223,9 +199,9 @@ const AdminAll_Payment = () => {
                     <li className="nav-item">
                       <a
                         href="https://www.swalay.talantoncore.in/"
-                        className="nav-link text-muted"
+                        className="nav-link text-light"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noreferrer"
                       >
                         About Us
                       </a>
@@ -233,9 +209,9 @@ const AdminAll_Payment = () => {
                     <li className="nav-item">
                       <a
                         href="https://www.swalay.talantoncore.in/swalay-merch"
-                        className="nav-link text-muted"
+                        className="nav-link text-light"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noreferrer"
                       >
                         Merch
                       </a>
@@ -243,22 +219,21 @@ const AdminAll_Payment = () => {
                     <li className="nav-item">
                       <a
                         href="https://www.swalay.talantoncore.in/pricing"
-                        className="nav-link pe-0 text-muted"
+                        className="nav-link pe-0 text-light"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noreferrer"
                       >
                         swalay
                       </a>
                     </li>
                   </ul>
-                </Col>
-              </Row>
-            </Container>
+                </div>
+              </div>
+            </div>
           </footer>
-        </Container>
+        </div>
       </main>
     </div>
   );
 };
-
 export default AdminAll_Payment;
