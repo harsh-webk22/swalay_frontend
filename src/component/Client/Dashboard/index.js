@@ -9,104 +9,103 @@ const Dashboard = () => {
     >
       <Sidebar />
       <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-       
-        <div className="container-fluid py-4"/>
+        <div className="container-fluid py-4" />
+        <div className="row">
+          <div className="col-lg-12 position-relative z-index-2">
+            <div className="card mb-4 ">
+              <div className="d-flex"></div>
+              <h3 className=" ms-3 mt-2 text-bold ">Dashboard</h3>
+            </div>
+            <div className="card-body p-1">
+              <div className="row">
+                <div className="col-lg-6 col-md-7">
+                  <div className="table-responsive">
+                    <table className="table align-items-center "></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* card */}
           <div className="row">
-          <div class="col-lg-12 position-relative z-index-2">
-          <div class="card mb-4 ">
-            <div class="d-flex">
-            </div>
-            <h3 class=" ms-3 mt-2 text-bold ">Dashboard</h3>
-          </div>
-          <div class="card-body p-1">
-            <div class="row">
-              <div class="col-lg-6 col-md-7">
-                <div class="table-responsive">
-                  <table class="table align-items-center ">
-                  </table>
+            <div className="col-lg-3 col-md-6 col-sm-6">
+              <div className="card  mb-2">
+                <div className="card-header p-3 pt-2">
+                  <div className="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+                    <i className="material-icons opacity-10">library_music</i>
+                  </div>
+                  <div className="text-end pt-1">
+                    <p className="text-sm mb-0 text-capitalize text-bold ">
+                      total songs
+                    </p>
+                    <h4 className="mb-0">100</h4>
+                  </div>
+                </div>
+                <hr className="dark horizontal my-0" />
+                <div className="card-footer p-3">
+                  <p className="mb-0" />
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-
-
-             {/* card */}
-             <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card  mb-2">
-              <div class="card-header p-3 pt-2">
-                <div
-                  class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
-                  <i class="material-icons opacity-10">library_music</i>
+            <div className="col-lg-3 col-md-6 col-sm-6 mt-sm-0 mt-4">
+              <div className="card  mb-2">
+                <div className="card-header p-3 pt-2">
+                  <div className="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
+                    <i className="material-icons opacity-10">done_all</i>
+                  </div>
+                  <div className="text-end pt-1">
+                    <p className="text-sm mb-0 text-capitalize text-bold">
+                      Live
+                    </p>
+                    <h4 className="mb-0">50</h4>
+                  </div>
                 </div>
-                <div class="text-end pt-1">
-                  <p class="text-sm mb-0 text-capitalize text-bold ">total songs</p>
-                  <h4 class="mb-0">100</h4>
+                <hr className="dark horizontal my-0" />
+                <div className="card-footer p-3">
+                  <p className="mb-0" />
                 </div>
               </div>
-              <hr class="dark horizontal my-0"/>
-              <div class="card-footer p-3">
-                <p class="mb-0"/>
+            </div>
+            <div className="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
+              <div className="card  mb-2">
+                <div className="card-header p-3 pt-2 bg-transparent">
+                  <div className="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                    <i className="material-icons opacity-10">pending_actions</i>
+                  </div>
+                  <div className="text-end pt-1">
+                    <p className="text-sm mb-0 text-capitalize text-bold">
+                      pending
+                    </p>
+                    <h4 className="mb-0 ">30</h4>
+                  </div>
+                </div>
+                <hr className="horizontal my-0 dark" />
+                <div className="card-footer p-3">
+                  <p className="mb-0 " />
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
+              <div className="card ">
+                <div className="card-header p-3 pt-2 bg-transparent">
+                  <div className="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                    <i className="material-icons opacity-10">close</i>
+                  </div>
+                  <div className="text-end pt-1">
+                    <p className="text-sm mb-0 text-capitalize text-bold ">
+                      rejected{" "}
+                    </p>
+                    <h4 className="mb-0 ">20</h4>
+                  </div>
+                </div>
+                <hr className="horizontal my-0 dark" />
+                <div className="card-footer p-3">
+                  <p className="mb-0 "></p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 mt-sm-0 mt-4">
-            <div class="card  mb-2">
-              <div class="card-header p-3 pt-2">
-                <div
-                  class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
-                  <i class="material-icons opacity-10">done_all</i>
-                </div>
-                <div class="text-end pt-1">
-                  <p class="text-sm mb-0 text-capitalize text-bold">Live</p>
-                  <h4 class="mb-0">50</h4>
-                </div>
-              </div>
-              <hr class="dark horizontal my-0"/>
-              <div class="card-footer p-3">
-                <p class="mb-0"/>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-            <div class="card  mb-2">
-              <div class="card-header p-3 pt-2 bg-transparent">
-                <div
-                  class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                  <i class="material-icons opacity-10">pending_actions</i>
-                </div>
-                <div class="text-end pt-1">
-                  <p class="text-sm mb-0 text-capitalize text-bold">pending</p>
-                  <h4 class="mb-0 ">30</h4>
-                </div>
-              </div>
-              <hr class="horizontal my-0 dark"/>
-              <div class="card-footer p-3">
-                <p class="mb-0 "/>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
-            <div class="card ">
-              <div class="card-header p-3 pt-2 bg-transparent">
-                <div
-                  class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                  <i class="material-icons opacity-10">close</i>
-                </div>
-                <div class="text-end pt-1">
-                  <p class="text-sm mb-0 text-capitalize text-bold ">rejected </p>
-                  <h4 class="mb-0 ">20</h4>
-                </div>
-              </div>
-              <hr class="horizontal my-0 dark"/>
-              <div class="card-footer p-3">
-                <p class="mb-0 "></p>
-              </div>
-            </div>
-          </div>
-        </div>
 
           <div className="row mb-1 mt-4">
             <div className="mt-4">

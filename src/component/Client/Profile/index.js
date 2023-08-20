@@ -1,10 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../Footer";
 import { apiendpoint } from "../../helper/apiendpoint";
 import Sidebar from "../Sidebar";
 
 const Profile = () => {
   const navigate = useNavigate();
+
+  // Demo user data
+  const demoData = {
+    name: "Name",
+    username: "Username",
+    label: "64dafc6ad63be1d8d51166be",
+    email: "testClient@gmail.com",
+    createdAt: "2023-08-15T05:11:50.533Z",
+    updatedAt: "2023-08-15T05:11:50.533Z",
+    __v: 0,
+  };
+
+  // User state for storing user details
+  const [userData, setUserData] = useState(demoData);
 
   // Function to get all clients data
   const fetchUser = async () => {
@@ -29,7 +44,7 @@ const Profile = () => {
     }
 
     res = await res.json();
-    console.log(res);
+    setUserData(res.userInfo);
   };
 
   useEffect(() => {
@@ -40,7 +55,6 @@ const Profile = () => {
     }
   }, []);
 
-  
   return (
     <div
       className="g-sidenav-show bg-gray-200 dark-version"
@@ -183,18 +197,19 @@ const Profile = () => {
                 <div className="card-body pt-0">
                   <div className="row">
                     <div className="col-6">
-                      <div className="input-group input-group-outline">
                       <label className="form-label">First Name </label>
+                      <div className="input-group input-group-outline">
                         <input
                           type="text"
                           className="form-control"
                           placeholder="Admin"
+                          value={userData?.name}
                         />
                       </div>
                     </div>
                     <div className="col-6">
-                      <div className="input-group input-group-outline"> 
                       <label className="form-label">Last Name </label>
+                      <div className="input-group input-group-outline">
                         <input
                           type="text"
                           className="form-control"
@@ -249,33 +264,34 @@ const Profile = () => {
                   </div>
                   <div className="row mt-4">
                     <div className="col-6">
-                      <div className="input-group input-group-outline">
                       <label className="form-label">Email </label>
+                      <div className="input-group input-group-outline">
                         <input
                           type="email"
                           className="form-control"
                           placeholder="example@email.com"
+                          value={userData?.email}
                         />
                       </div>
                     </div>
                     <div className="col-6">
+                      <label className="form-label"> Number </label>
                       <div className="input-group input-group-outline">
-                      <label className="form-label"> Number  </label>
-                      <input type="number" className="form-control" />
+                        <input type="number" className="form-control" />
                       </div>
                     </div>
                   </div>
                   <div className="row mt-4">
                     <div className="col-6">
                       <div className="input-group input-group-outline">
-                      <label className="form-label">PAN number </label>
-                      <input type="text" className="form-control" />
+                        <label className="form-label">PAN number </label>
+                        <input type="text" className="form-control" />
                       </div>
                     </div>
                     <div className="col-6">
                       <div className="input-group input-group-outline">
-                      <label className="form-label">GSt Number </label>
-                      <input type="text" className="form-control" />
+                        <label className="form-label">GSt Number </label>
+                        <input type="text" className="form-control" />
                       </div>
                     </div>
                   </div>
@@ -356,9 +372,6 @@ const Profile = () => {
                   </button>
                 </div>
               </div>
-              
-              
-              
               Card Delete Account
               <div className="card mt-4" id="delete">
                 <div className="card-body">
@@ -381,72 +394,8 @@ const Profile = () => {
               </div>
             </div>
           </div>
-
-          <footer className="footer py-4 ">
-            <div className="container-fluid">
-              <div className="row align-items-center justify-content-lg-between">
-                <div className="col-lg-6 mb-lg-0 mb-4">
-                  <div className="copyright text-center text-sm text-muted text-lg-start">
-                    ©<script>document.write(new Date().getFullYear())</script>,
-                    made with <i className="fa fa-heart"></i> by
-                    <a
-                      href="https://www.creative-tim.com"
-                      className="font-weight-bold"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Swalay
-                    </a>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <ul className="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li className="nav-item">
-                      <a
-                        href="https://www.swalay.talantoncore.in/"
-                        className="nav-link text-light"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="https://www.swalay.talantoncore.in/"
-                        className="nav-link text-light"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        About Us
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="https://www.swalay.talantoncore.in/swalay-merch"
-                        className="nav-link text-light"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Merch
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="https://www.swalay.talantoncore.in/pricing"
-                        className="nav-link pe-0 text-light"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        swalay
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </footer>
         </div>
+        <Footer />
       </main>
     </div>
   );

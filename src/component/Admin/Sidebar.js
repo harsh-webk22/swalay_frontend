@@ -42,7 +42,7 @@ const Sidebar = () => {
             <div className="collapse" id="ProfileNav">
               <ul className="nav ">
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/AdminProfile">
+                  <Link className="nav-link text-white " to="/admin/profile">
                     <span className="sidenav-mini-icon"> </span>
                     <span className="sidenav-normal  ms-3  ps-1">
                       {" "}
@@ -82,7 +82,7 @@ const Sidebar = () => {
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/adminAll_albums">
+                  <Link className="nav-link text-white " to="/admin/all_albums">
                     <span className="sidenav-normal  ms-2  ps-1">
                       {" "}
                       All Albums{" "}
@@ -91,12 +91,12 @@ const Sidebar = () => {
                 </li>
 
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/adminLyrics">
+                  <Link className="nav-link text-white " to="/admin/lyrics">
                     <span className="sidenav-normal  ms-2  ps-1"> Lyrics </span>
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/adminAll_Payment">
+                  <Link className="nav-link text-white " to="/admin/all_Payment">
                     <span className="sidenav-normal  ms-2  ps-1">
                       {" "}
                       Payment{" "}
@@ -104,7 +104,7 @@ const Sidebar = () => {
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/adminAllLabel">
+                  <Link className="nav-link text-white " to="/admin/all_label">
                     <span className="sidenav-normal  ms-2  ps-1">
                       {" "}
                       All Label{" "}
@@ -130,21 +130,21 @@ const Sidebar = () => {
             <div className="collapse" id="ToolsExamples">
               <ul className="nav ">
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/adminInstagramLinking">
+                  <Link className="nav-link text-white " to="/admin/instagramLinking">
                     <span className="sidenav-normal  ms-2  ps-1">
                       InstagramLinking
                     </span>
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/adminLyricsSubmission">
+                  <Link className="nav-link text-white " to="/admin/lyricsSubmission">
                     <span className="sidenav-normal  ms-2  ps-1">
                       Lyrics Submission
                     </span>
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/adminArtistProfile">
+                  <Link className="nav-link text-white " to="/admin/artistProfile">
                     <span className="sidenav-normal  ms-2  ps-1">
                       Artist Profile Linking
                     </span>
@@ -153,7 +153,7 @@ const Sidebar = () => {
                 <li className="nav-item ">
                   <Link
                     className="nav-link text-white "
-                    to="/adminPublishNotification"
+                    to="/admin/PublishNotification"
                   >
                     <span className="sidenav-normal  ms-2  ps-1">
                       Publish Notification
