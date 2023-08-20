@@ -39,7 +39,7 @@ const Lyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline ">
                     <label for="projectName" className="form-label">
-                      Email Address
+                      Song Name 
                     </label>
                     <input
                       type="text"
@@ -51,7 +51,7 @@ const Lyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
-                      Phone Number
+                      Artist Name 
                     </label>
                     <input
                       type="text"

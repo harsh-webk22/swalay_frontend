@@ -31,14 +31,16 @@ const AddAlbum = () => {
                 </div>
 
                 <div className="card-body pt-2">
-                  <div className="input-group input-group-outline dark-version">
-                    <label for="projectName" className="form-label">
+                <label for="projectName" className="form-label text-">
                       Main Artist
                     </label>
+                  <div className="input-group input-group-outline dark-version">
+                    
                     <input
                       type="text"
                       className="form-control"
                       id="projectName"
+                      
                     />
                   </div>
                 </div>
