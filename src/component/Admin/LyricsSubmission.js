@@ -77,9 +77,9 @@ function AdminLyricsSubmission() {
       <Sidebar />
       <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
         <Container fluid className="py-4">
-          <Row>
-            <Col xs={12}>
-              <Card className="bg-gray-900 text-white">
+          <Row className="dark-version">
+            <Col className="dark-version" xs={12}>
+              <Card className="dark-version text-white">
                 <div className="d-sm-flex justify-content-between">
                   <div className="card-header">
                     <h5 className="mb-0">Lyrics Submission</h5>
@@ -87,7 +87,7 @@ function AdminLyricsSubmission() {
                   <div className="d-flex card-header">
                     <div className="dropdown d-inline">
                       <a
-                        href="./Lyrics.html"
+                        href="./lyrics"
                         className="mb-0 btn btn-icon bg-gradient-primary"
                       >
                         Add Lyrics
@@ -101,48 +101,37 @@ function AdminLyricsSubmission() {
                     className="table table-dark table-flush"
                     id="datatable-search"
                   >
-                    <thead className="thead-light">
-                      <tr>
-                        <th>#</th>
-                        <th>Song Name</th>
-                        <th>ISRC</th>
-                        <th>Writer Name</th>
-                        <th>Status</th>
+                    <thead className="thead-light bg-gray-200 dark-version">
+                      <tr className="bg-gray-200 dark-version">
+                        <th className="bg-gray-200 dark-version">#</th>
+                        <th className="bg-gray-200 dark-version">Song Name</th>
+                        <th className="bg-gray-200 dark-version">ISRC</th>
+                        <th className="bg-gray-200 dark-version">
+                          Writer Name
+                        </th>
+                        <th className="bg-gray-200 dark-version">Status</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="bg-gray-200 dark-version">
                       {submissions.map((submission) => (
-                        <tr key={submission.id}>
-                          <td className="text-sm font-weight-normal">
+                        <tr
+                          className="bg-gray-200 dark-version"
+                          key={submission.id}
+                        >
+                          <td className="bg-gray-200 dark-version">
                             {submission.id}
                           </td>
-                          <td className="text-sm font-weight-normal">
+                          <td className="bg-gray-200 dark-version">
                             {submission.songName}
                           </td>
-                          <td className="text-sm font-weight-normal">
+                          <td className="bg-gray-200 dark-version">
                             {submission.isrc}
                           </td>
-                          <td className="text-sm font-weight-normal">
+                          <td className="bg-gray-200 dark-version">
                             {submission.writerName}
                           </td>
-                          <td className="text-sm font-weight-normal">
+                          <td className="bg-gray-200 dark-version">
                             {submission.status}
-                          </td>
-                          <td>
-                            <Button
-                              variant="success"
-                              onClick={() => handleApprove(submission.id)}
-                              disabled={submission.status === "Approved"}
-                            >
-                              Approve
-                            </Button>{" "}
-                            <Button
-                              variant="danger"
-                              onClick={() => handleReject(submission.id)}
-                              disabled={submission.status === "Rejected"}
-                            >
-                              Reject
-                            </Button>
                           </td>
                         </tr>
                       ))}

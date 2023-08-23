@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { apiendpoint } from "../../helper/apiendpoint";
-import { langArr, genreArray } from "../../helper/utilArray";
-import Dropdown from "../../Dropdown";
-import Footer from "../../Footer";
-import Sidebar from "../Sidebar";
+import { apiendpoint } from "../helper/apiendpoint";
+import { langArr, genreArray } from "../helper/utilArray";
+import Dropdown from "../Dropdown";
+import Footer from "../Footer";
+import Sidebar from "./Sidebar";
 
 const AddAlbum = () => {
   let albumDemoData = {
@@ -64,7 +64,7 @@ const AddAlbum = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({...albumData, artwork}),
+        body: JSON.stringify({ ...albumData, artwork }),
       });
 
       if (!res.ok) {

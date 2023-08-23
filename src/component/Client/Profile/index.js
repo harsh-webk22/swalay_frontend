@@ -1,6 +1,60 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Footer from "../../Footer";
+import { apiendpoint } from "../../helper/apiendpoint";
 import Sidebar from "../Sidebar";
 
 const Profile = () => {
+  const navigate = useNavigate();
+
+  // Demo user data
+  const demoData = {
+    name: "Name",
+    username: "Username",
+    label: "64dafc6ad63be1d8d51166be",
+    email: "testClient@gmail.com",
+    createdAt: "2023-08-15T05:11:50.533Z",
+    updatedAt: "2023-08-15T05:11:50.533Z",
+    __v: 0,
+  };
+
+  // User state for storing user details
+  const [userData, setUserData] = useState(demoData);
+
+  // Function to get all clients data
+  const fetchUser = async () => {
+    // Fetch token from localStorage
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    let res = await fetch(`${apiendpoint}/client/client_data`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!res.ok) {
+      alert("Authentication failed!");
+      return;
+    }
+
+    res = await res.json();
+    setUserData(res.userInfo);
+  };
+
+  useEffect(() => {
+    try {
+      fetchUser();
+    } catch (err) {
+      alert("Error occured in fetching your data");
+    }
+  }, []);
+
   return (
     <div
       className="g-sidenav-show bg-gray-200 dark-version"
@@ -8,7 +62,7 @@ const Profile = () => {
     >
       <Sidebar />
 
-      <main className="main-content max-height-vh-100 h-100">
+      <main className="main-content max-height-vh-100 h-100 ">
         <nav className="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl ">
           <div className="container-fluid py-1 px-3">
             <nav aria-label="breadcrumb">
@@ -143,18 +197,19 @@ const Profile = () => {
                 <div className="card-body pt-0">
                   <div className="row">
                     <div className="col-6">
-                      <div className="input-group input-group-static">
-                        <label>First Name</label>
+                      <label className="form-label">First Name </label>
+                      <div className="input-group input-group-outline">
                         <input
                           type="text"
                           className="form-control"
                           placeholder="Admin"
+                          value={userData?.name}
                         />
                       </div>
                     </div>
                     <div className="col-6">
-                      <div className="input-group input-group-static">
-                        <label>Last Name</label>
+                      <label className="form-label">Last Name </label>
+                      <div className="input-group input-group-outline">
                         <input
                           type="text"
                           className="form-control"
@@ -167,7 +222,7 @@ const Profile = () => {
                     <div className="col-sm-4 col-6">
                       <label className="form-label mt-4 ms-0">I'm</label>
                       <select
-                        className="form-control"
+                        className="form-control dark-version"
                         name="choices-gender"
                         id="choices-gender"
                       >
@@ -177,13 +232,13 @@ const Profile = () => {
                       </select>
                     </div>
                     <div className="col-sm-8">
-                      <div className="row">
+                      <div className="row ">
                         <div className="col-sm-5 col-5">
                           <label className="form-label mt-4 ms-0">
                             Birth Date
                           </label>
                           <select
-                            className="form-control"
+                            className="form-control dark-version"
                             name="choices-month"
                             id="choices-month"
                           ></select>
@@ -191,15 +246,15 @@ const Profile = () => {
                         <div className="col-sm-4 col-3">
                           <label className="form-label mt-4 ms-0">&nbsp;</label>
                           <select
-                            className="form-control"
+                            className="form-control dark-version"
                             name="choices-day"
                             id="choices-day"
                           ></select>
                         </div>
-                        <div className="col-sm-3 col-4">
+                        <div className="col-sm-3 col-4 ">
                           <label className="form-label mt-4">&nbsp;</label>
                           <select
-                            className="form-control"
+                            className="form-control dark-version"
                             name="choices-year"
                             id="choices-year"
                           ></select>
@@ -209,45 +264,34 @@ const Profile = () => {
                   </div>
                   <div className="row mt-4">
                     <div className="col-6">
-                      <div className="input-group input-group-static">
-                        <label>Email</label>
+                      <label className="form-label">Email </label>
+                      <div className="input-group input-group-outline">
                         <input
                           type="email"
                           className="form-control"
                           placeholder="example@email.com"
+                          value={userData?.email}
                         />
                       </div>
                     </div>
                     <div className="col-6">
-                      <div className="input-group input-group-static">
-                        <label>Confirm Email</label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          placeholder="example@email.com"
-                        />
+                      <label className="form-label"> Number </label>
+                      <div className="input-group input-group-outline">
+                        <input type="number" className="form-control" />
                       </div>
                     </div>
                   </div>
                   <div className="row mt-4">
                     <div className="col-6">
-                      <div className="input-group input-group-static">
-                        <label>Your location</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="india"
-                        />
+                      <div className="input-group input-group-outline">
+                        <label className="form-label">PAN number </label>
+                        <input type="text" className="form-control" />
                       </div>
                     </div>
                     <div className="col-6">
-                      <div className="input-group input-group-static">
-                        <label>Phone Number</label>
-                        <input
-                          type="number"
-                          className="form-control"
-                          placeholder="+91"
-                        />
+                      <div className="input-group input-group-outline">
+                        <label className="form-label">GSt Number </label>
+                        <input type="text" className="form-control" />
                       </div>
                     </div>
                   </div>
@@ -275,9 +319,9 @@ const Profile = () => {
                   <p className="text-muted mb-2">
                     Please follow this guide for a strong password:
                   </p>
-                  <ul className="text-muted ps-4 mb-0 float-start">
+                  <ul className="text-light ps-4 mb-0 float-start">
                     <li>
-                      <span className="text-sm">One special characters</span>
+                      <span className="text-sm ">One special characters</span>
                     </li>
                     <li>
                       <span className="text-sm">Min 6 characters</span>
@@ -328,425 +372,6 @@ const Profile = () => {
                   </button>
                 </div>
               </div>
-              {/* <!-- Card Change Password --> */}
-              <div className="card mt-4" id="accounts">
-                <div className="card-header">
-                  <h5>Accounts</h5>
-                  <p className="text-sm">
-                    Here you can setup and manage your integration settings.
-                  </p>
-                </div>
-                <div className="card-body pt-0">
-                  <div className="d-flex">
-                    <img
-                      className="width-48-px"
-                      src="../../../assets/img/small-logos/logo-slack.svg"
-                      alt="logo_slack"
-                    />
-                    <div className="my-auto ms-3">
-                      <div className="h-100">
-                        <h5 className="mb-0">Slack</h5>
-                        <a className="text-sm text-body" href="*">
-                          Show less{" "}
-                          <i
-                            className="fas fa-chevron-up text-xs ms-1"
-                            aria-hidden="true"
-                          ></i>
-                        </a>
-                      </div>
-                    </div>
-                    <p className="text-sm text-secondary ms-auto me-3 my-auto">
-                      Enabled
-                    </p>
-                    <div className="form-check form-switch my-auto">
-                      <input
-                        className="form-check-input"
-                        checked
-                        type="checkbox"
-                        id="flexSwitchCheckDefault1"
-                      />
-                    </div>
-                  </div>
-                  <div className="ps-5 pt-3 ms-3">
-                    <p className="mb-0 text-sm">
-                      You haven't added your Slack yet or you aren't authorized.
-                      Please add our Slack Bot to your account by clicking on{" "}
-                      <a href="javascript">here</a>. When you've added the bot,
-                      send your verification code that you have received.
-                    </p>
-                    <div className="d-sm-flex bg-gray-100 border-radius-lg p-2 my-4">
-                      <p className="text-sm font-weight-bold my-auto ps-sm-2">
-                        Verification Code
-                      </p>
-                      <input
-                        className="form-control form-control-sm ms-sm-auto mt-sm-0 mt-2 w-sm-15 w-40"
-                        type="text"
-                        value="1172913"
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="top"
-                        title="Copy!"
-                      />
-                    </div>
-                    <div className="d-sm-flex bg-gray-100 border-radius-lg p-2 my-4">
-                      <p className="text-sm font-weight-bold my-auto ps-sm-2">
-                        Connected account
-                      </p>
-                      <h6 className="text-sm ms-auto me-3 my-auto">
-                        hello@creative-tim.com
-                      </h6>
-                      <button
-                        className="btn btn-sm bg-gradient-dark my-sm-auto mt-2 mb-0"
-                        type="button"
-                        name="button"
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                  <hr className="horizontal dark" />
-                  <div className="d-flex">
-                    <img
-                      className="width-48-px"
-                      src="../../../assets/img/small-logos/logo-spotify.svg"
-                      alt="logo_spotify"
-                    />
-                    <div className="my-auto ms-3">
-                      <div className="h-100">
-                        <h5 className="mb-0">Spotify</h5>
-                        <p className="mb-0 text-sm">Music</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-secondary ms-auto me-3 my-auto">
-                      Enabled
-                    </p>
-                    <div className="form-check form-switch my-auto">
-                      <input
-                        className="form-check-input"
-                        checked
-                        type="checkbox"
-                        id="flexSwitchCheckDefault2"
-                      />
-                    </div>
-                  </div>
-                  <hr className="horizontal dark" />
-                  <div className="d-flex">
-                    <img
-                      className="width-48-px"
-                      src="../../../assets/img/small-logos/logo-atlassian.svg"
-                      alt="logo_atlassian"
-                    />
-                    <div className="my-auto ms-3">
-                      <div className="h-100">
-                        <h5 className="mb-0">Atlassian</h5>
-                        <p className="mb-0 text-sm">Payment vendor</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-secondary ms-auto me-3 my-auto">
-                      Enabled
-                    </p>
-                    <div className="form-check form-switch my-auto">
-                      <input
-                        className="form-check-input"
-                        checked
-                        type="checkbox"
-                        id="flexSwitchCheckDefault3"
-                      />
-                    </div>
-                  </div>
-                  <hr className="horizontal dark" />
-                  <div className="d-flex">
-                    <img
-                      className="width-48-px"
-                      src="../../../assets/img/small-logos/logo-asana.svg"
-                      alt="logo_asana"
-                    />
-                    <div className="my-auto ms-3">
-                      <div className="h-100">
-                        <h5 className="mb-0">Asana</h5>
-                        <p className="mb-0 text-sm">Organize your team</p>
-                      </div>
-                    </div>
-                    <div className="form-check form-switch ms-auto my-auto">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="flexSwitchCheckDefault4"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              Card Notifications
-              <div className="card mt-4" id="notifications">
-                <div className="card-header">
-                  <h5>Notifications</h5>
-                  <p className="text-sm">
-                    Choose how you receive notifications. These notification
-                    settings apply to the things you’re watching.
-                  </p>
-                </div>
-                <div className="card-body pt-0">
-                  <div className="table-responsive">
-                    <table className="table mb-0">
-                      <thead>
-                        <tr>
-                          <th className="ps-1" colSpan="4">
-                            <p className="mb-0">Activity</p>
-                          </th>
-                          <th className="text-center">
-                            <p className="mb-0">Email</p>
-                          </th>
-                          <th className="text-center">
-                            <p className="mb-0">Push</p>
-                          </th>
-                          <th className="text-center">
-                            <p className="mb-0">SMS</p>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td className="ps-1" colSpan="4">
-                            <div className="my-auto">
-                              <span className="text-dark d-block text-sm">
-                                Mentions
-                              </span>
-                              <span className="text-xs font-weight-normal">
-                                Notify when another user mentions you in a
-                                comment
-                              </span>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                checked
-                                type="checkbox"
-                                id="flexSwitchCheckDefault11"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id="flexSwitchCheckDefault12"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id="flexSwitchCheckDefault13"
-                              />
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="ps-1" colSpan="4">
-                            <div className="my-auto">
-                              <span className="text-dark d-block text-sm">
-                                Comments
-                              </span>
-                              <span className="text-xs font-weight-normal">
-                                Notify when another user comments your item.
-                              </span>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                checked
-                                type="checkbox"
-                                id="flexSwitchCheckDefault14"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                checked
-                                type="checkbox"
-                                id="flexSwitchCheckDefault15"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id="flexSwitchCheckDefault16"
-                              />
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="ps-1" colSpan="4">
-                            <div className="my-auto">
-                              <span className="text-dark d-block text-sm">
-                                Follows
-                              </span>
-                              <span className="text-xs font-weight-normal">
-                                Notify when another user follows you.
-                              </span>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id="flexSwitchCheckDefault17"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                checked
-                                type="checkbox"
-                                id="flexSwitchCheckDefault18"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id="flexSwitchCheckDefault19"
-                              />
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="ps-1" colSpan="4">
-                            <div className="my-auto">
-                              <p className="text-sm mb-0">
-                                Log in from a new device
-                              </p>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                checked
-                                type="checkbox"
-                                id="flexSwitchCheckDefault20"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                checked
-                                type="checkbox"
-                                id="flexSwitchCheckDefault21"
-                              />
-                            </div>
-                          </td>
-                          <td>
-                            <div className="form-check form-switch mb-0 d-flex align-items-center justify-content-center">
-                              <input
-                                className="form-check-input"
-                                checked
-                                type="checkbox"
-                                id="flexSwitchCheckDefault22"
-                              />
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div className="card mt-4" id="sessions">
-                <div className="card-header pb-3">
-                  <h5>Sessions</h5>
-                  <p className="text-sm">
-                    This is a list of devices that have logged into your
-                    account. Remove those that you do not recognize.
-                  </p>
-                </div>
-                <div className="card-body pt-0">
-                  <div className="d-flex align-items-center">
-                    <div className="text-center w-5">
-                      <i className="fas fa-desktop text-lg opacity-6"></i>
-                    </div>
-                    <div className="my-auto ms-3">
-                      <div className="h-100">
-                        <p className="text-sm mb-1">Bucharest 68.133.163.201</p>
-                        <p className="mb-0 text-xs">Your current session</p>
-                      </div>
-                    </div>
-                    <span className="badge badge-success badge-sm my-auto ms-auto me-3">
-                      Active
-                    </span>
-                    <p className="text-secondary text-sm my-auto me-3">EU</p>
-                    <a
-                      href="*"
-                      className="text-primary text-sm icon-move-right my-auto"
-                    >
-                      See more
-                      <i
-                        className="fas fa-arrow-right text-xs ms-1"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
-                  </div>
-                  <hr className="horizontal dark" />
-                  <div className="d-flex align-items-center">
-                    <div className="text-center w-5">
-                      <i className="fas fa-desktop text-lg opacity-6"></i>
-                    </div>
-                    <p className="my-auto ms-3">Chrome on macOS</p>
-                    <p className="text-secondary text-sm ms-auto my-auto me-3">
-                      US
-                    </p>
-                    <a
-                      href="*"
-                      className="text-primary text-sm icon-move-right my-auto"
-                    >
-                      See more
-                      <i
-                        className="fas fa-arrow-right text-xs ms-1"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
-                  </div>
-                  <hr className="horizontal dark" />
-                  <div className="d-flex align-items-center">
-                    <div className="text-center w-5">
-                      <i className="fas fa-mobile text-lg opacity-6"></i>
-                    </div>
-                    <p className="my-auto ms-3">Safari on iPhone</p>
-                    <p className="text-secondary text-sm ms-auto my-auto me-3">
-                      US
-                    </p>
-                    <a
-                      href="*"
-                      className="text-primary text-sm icon-move-right my-auto"
-                    >
-                      See more
-                      <i
-                        className="fas fa-arrow-right text-xs ms-1"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
               Card Delete Account
               <div className="card mt-4" id="delete">
                 <div className="card-body">
@@ -757,7 +382,7 @@ const Profile = () => {
                     </div>
                     <div className="w-50 text-end">
                       <button
-                        className="btn bg-gradient-danger mb-0 ms-2"
+                        className="btn bg-gradient-danger mb-0 ms-1"
                         type="button"
                         name="button"
                       >
@@ -769,72 +394,8 @@ const Profile = () => {
               </div>
             </div>
           </div>
-
-          <footer className="footer py-4 ">
-            <div className="container-fluid">
-              <div className="row align-items-center justify-content-lg-between">
-                <div className="col-lg-6 mb-lg-0 mb-4">
-                  <div className="copyright text-center text-sm text-muted text-lg-start">
-                    ©<script>document.write(new Date().getFullYear())</script>,
-                    made with <i className="fa fa-heart"></i> by
-                    <a
-                      href="https://www.creative-tim.com"
-                      className="font-weight-bold"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Swalay
-                    </a>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <ul className="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li className="nav-item">
-                      <a
-                        href="https://www.swalay.talantoncore.in/"
-                        className="nav-link text-muted"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="https://www.swalay.talantoncore.in/"
-                        className="nav-link text-muted"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        About Us
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="https://www.swalay.talantoncore.in/swalay-merch"
-                        className="nav-link text-muted"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Merch
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        href="https://www.swalay.talantoncore.in/pricing"
-                        className="nav-link pe-0 text-muted"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        swalay
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </footer>
         </div>
+        <Footer />
       </main>
     </div>
   );

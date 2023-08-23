@@ -1,222 +1,186 @@
+import React, { useState } from "react";
 import Sidebar from "../Sidebar";
 
-const Lyrics = () => {
+import { Container, Row, Col, Card, Button, Table } from "react-bootstrap";
+
+function AdminLyricsSubmission() {
+  const [submissions, setSubmissions] = useState([
+    {
+      id: 1,
+      songName: "JJSKY Music",
+      isrc: "int1001",
+      writerName: "nikhil",
+      status: "pending",
+    },
+    {
+      id: 2,
+      songName: "JJSKY Music",
+      isrc: "int1001",
+      writerName: "nikhil",
+      status: "pending",
+    },
+    {
+      id: 3,
+      songName: "JJSKY Music",
+      isrc: "int1001",
+      writerName: "nikhil",
+      status: "pending",
+    },
+    {
+      id: 4,
+      songName: "JJSKY Music",
+      isrc: "int1001",
+      writerName: "nikhil",
+      status: "pending",
+    },
+    {
+      id: 5,
+      songName: "JJSKY Music",
+      isrc: "int1001",
+      writerName: "nikhil",
+      status: "pending",
+    },
+    {
+      id: 6,
+      songName: "JJSKY Music",
+      isrc: "int1001",
+      writerName: "nikhil",
+      status: "pending",
+    },
+    // Add more submissions here...
+  ]);
+
+  const handleApprove = (id) => {
+    // Update the status of the submission with the given ID to "Approved"
+    setSubmissions((prevSubmissions) =>
+      prevSubmissions.map((submission) =>
+        submission.id === id
+          ? { ...submission, status: "Approved" }
+          : submission
+      )
+    );
+  };
+
+  const handleReject = (id) => {
+    // Update the status of the submission with the given ID to "Rejected"
+    setSubmissions((prevSubmissions) =>
+      prevSubmissions.map((submission) =>
+        submission.id === id
+          ? { ...submission, status: "Rejected" }
+          : submission
+      )
+    );
+  };
+
   return (
-    <div
-      className="g-sidenav-show  bg-gray-200 dark-version "
-      style={{ backgroundColor: "black", height: "100vh", overflow: "scroll" }}
-    >
+    <div className="g-sidenav-show  bg-gray-200 dark-version">
       <Sidebar />
-
-      <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        {/* <!-- Navbar -->
-    <!-- End Navbar --> */}
-
-        <div className="container-fluid py-4">
-          <div className="row mt-4">
-            <div className="col-lg-10 col-10 mx-auto position-relative">
-              <div className="card">
-                <div className="card-header p-3 pt-4">
-                  <div className="icon icon-lg icon-shape bg-gradient-dark shadow text-center border-radius-xl mt-n1 me-4 float-start">
-                    <i className="material-icons opacity-10">lyrics</i>
+      <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+        <Container fluid className="py-4">
+          <Row className="dark-version">
+            <Col className="dark-version" xs={12}>
+              <Card className="dark-version text-white">
+                <div className="d-sm-flex justify-content-between">
+                  <div className="card-header">
+                    <h5 className="mb-0">Lyrics Submission</h5>
                   </div>
-                  <h3 className="mb-0 text-align center">
-                    <b>Lyrics</b>
-                  </h3>
-                </div>
-                <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
-                    <label for="projectName" className="form-label">
-                      Order Number/Label Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="projectName"
-                    />
-                  </div>
-                </div>
-                <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
-                    <label for="projectName" className="form-label">
-                      Email Address
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="projectName"
-                    />
-                  </div>
-                </div>
-                <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
-                    <label for="projectName" className="form-label">
-                      Phone Number
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="projectName"
-                    />
-                  </div>
-                </div>
-                <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
-                    <label for="projectName" className="form-label">
-                      ISRC Code (if aplicable)
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="projectName"
-                    />
-                  </div>
-                </div>
-                <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
-                    <label for="projectName" className="form-label">
-                      Writer Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="projectName"
-                    />
-                  </div>
-                </div>
-                <div className="card-body pt-2">
-                  <div className="input-group input-group-dynamic">
-                    <label for="projectName" className="form-label">
-                      Language Of Lyrics
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="projectName"
-                    />
-                  </div>
-                </div>
-
-                
-
-                <label className="mt-5 form-label h5 ms-3">Project Tags</label>
-                <select
-                  className="form-control"
-                  name="choices-multiple-remove-button"
-                  id="choices-multiple-remove-button"
-                  multiple
-                >
-                  <option value="Choice 1" selected>
-                    Choice 1
-                  </option>
-                  <option value="Choice 2">Choice 2</option>
-                  <option value="Choice 3">Choice 3</option>
-                  <option value="Choice 4">Choice 4</option>
-                </select>
-
-                <div className="input-group input-group-dynamic mt-4 ms-3 ">
-                  <label className="form-label  h5 mt-3">
-                    <u>
-                      <b>Upload file</b>
-                    </u>
-                  </label>
-                  <form
-                    action="/file-upload"
-                    className="form-control dropzone mt-7"
-                    id="dropzone"
-                  >
-                    <div className="fallback">
-                      <input name="file" type="file" multiple />
+                  <div className="d-flex card-header">
+                    <div className="dropdown d-inline">
+                      <a
+                        href="./add_Lyrics"
+                        className="mb-0 btn btn-icon bg-gradient-primary"
+                      >
+                        Add Lyrics
+                      </a>
                     </div>
-                  </form>
+                  </div>
                 </div>
-                <div className="d-flex justify-content-end mt-4">
-                  <button
-                    type="button"
-                    name="button"
-                    className="btn btn-light m-0"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="button"
-                    name="button"
-                    className="btn bg-gradient-dark m-0 ms-2"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <footer className="footer py-4 ">
-          <div className="container-fluid">
-            <div className="row align-items-center justify-content-lg-between">
-              <div className="col-lg-6 mb-lg-0 mb-4">
-                <div className="copyright text-center text-sm text-muted text-lg-start ">
-                  ©
-                  {/* <script>
-                document.write(new Date().getFullYear())
-              </script>, */}
-                  made with <i className="fa fa-heart"></i> by
-                  <a
-                    href="https://www.creative-tim.com"
-                    className="font-weight-bold"
-                    target="_blank"
+                <div className="table-responsive">
+                  <Table
+                    className="table table-dark table-flush"
+                    id="datatable-search"
                   >
-                    Swalay
-                  </a>
+                    <thead className="thead-light bg-gray-200 dark-version">
+                      <tr className="bg-gray-200 dark-version">
+                        <th className="bg-gray-200 dark-version">#</th>
+                        <th className="bg-gray-200 dark-version">Song Name</th>
+                        <th className="bg-gray-200 dark-version">ISRC</th>
+                        <th className="bg-gray-200 dark-version">
+                          Writer Name
+                        </th>
+                        <th className="bg-gray-200 dark-version">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-gray-200 dark-version">
+                      {submissions.map((submission) => (
+                        <tr
+                          className="bg-gray-200 dark-version"
+                          key={submission.id}
+                        >
+                          <td className="bg-gray-200 dark-version">
+                            {submission.id}
+                          </td>
+                          <td className="bg-gray-200 dark-version">
+                            {submission.songName}
+                          </td>
+                          <td className="bg-gray-200 dark-version">
+                            {submission.isrc}
+                          </td>
+                          <td className="bg-gray-200 dark-version">
+                            {submission.writerName}
+                          </td>
+                          <td className="bg-gray-200 dark-version">
+                            {submission.status}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
                 </div>
-              </div>
-              <div className="col-lg-6">
-                <ul className="nav nav-footer justify-content-center justify-content-lg-end">
-                  <li className="nav-item">
+              </Card>
+            </Col>
+          </Row>
+
+          <footer className="footer py-4">
+            <Container fluid>
+              <Row className="align-items-center justify-content-lg-between">
+                <Col lg={6} mb-lg-0 mb-4>
+                  <div className="copyright text-center text-sm text-muted text-lg-start">
+                    © {new Date().getFullYear()}, made with{" "}
+                    <i className="fa fa-heart"></i> by{" "}
                     <a
-                      href="https://www.swalay.talantoncore.in/"
-                      className="nav-link text-muted"
+                      href="https://www.creative-tim.com"
+                      className="font-weight-bold"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Dashboard
+                      Swalay
                     </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      href="https://www.swalay.talantoncore.in/"
-                      className="nav-link text-muted"
-                      target="_blank"
-                    >
-                      About Us
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      href="https://www.swalay.talantoncore.in/swalay-merch"
-                      className="nav-link text-muted"
-                      target="_blank"
-                    >
-                      Merch
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      href="https://www.swalay.talantoncore.in/pricing"
-                      className="nav-link pe-0 text-muted"
-                      target="_blank"
-                    >
-                      swalay
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
-        {/* </div> */}
+                  </div>
+                </Col>
+                <Col lg={6}>
+                  <ul className="nav nav-footer justify-content-center justify-content-lg-end">
+                    <li className="nav-item">
+                      <a
+                        href="https://www.swalay.talantoncore.in/"
+                        className="nav-link text-muted"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    {/* Other navigation links */}
+                  </ul>
+                </Col>
+              </Row>
+            </Container>
+          </footer>
+        </Container>
       </main>
     </div>
   );
-};
+}
 
-export default Lyrics;
+export default AdminLyricsSubmission;

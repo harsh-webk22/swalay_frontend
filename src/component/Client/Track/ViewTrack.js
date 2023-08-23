@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom"; // Import Link from react-router-dom
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import Sidebar from "./Sidebar";
+import Sidebar from "../Sidebar";
 
 const AdminAlbumTrackPage = () => {
   const { albumId } = useParams();
@@ -36,24 +36,29 @@ const AdminAlbumTrackPage = () => {
 
   return (
     <div className="g-sidenav-show bg-gray-200 dark-version">
-  <Sidebar />
-  <div style={{ background: "#212529", minHeight: "100vh", color: "white" }}>
-    <Container className="py-5">
-      
-
-<Row className="mb-4">
+      <Sidebar />
+      <div
+        style={{ background: "#212529", minHeight: "100vh", color: "white" }}
+      >
+        <Container className="py-5">
+          <Row className="mb-4">
             <Col className="text-right">
               {/* Wrap the button with Link */}
-              <Link to={`/admin/add-track/${albumId}`} style={{ textDecoration: "none" }}>
-                <Button className="px-12" variant="primary">Add Track</Button>
+              <Link
+                to={`/add-track/${albumId}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Button className="px-12" variant="primary">
+                  Add Track
+                </Button>
               </Link>
             </Col>
           </Row>
 
-      <Row>
-        <Col md={2}></Col>
-        <Col md={5}>
-          <h1 className="mb-4">Album Track Page - Album ID: {albumId}</h1>
+          <Row>
+            <Col md={2}></Col>
+            <Col md={5}>
+              <h1 className="mb-4">Album Track Page - Album ID: {albumId}</h1>
               <img
                 src={dummyAlbumDetails.photoUrl}
                 alt={dummyAlbumDetails.name}
@@ -79,8 +84,8 @@ const AdminAlbumTrackPage = () => {
               </p>
             </Col>
             <Col md={5}>
-          <Card className="bg-gradient-dark text-white p-4">
-            <h2 className="mb-4">Release Tracks Details</h2>
+              <Card className="bg-gradient-dark text-white p-4">
+                <h2 className="mb-4">Release Tracks Details</h2>
                 {releaseTracksDetails.map((track) => (
                   <div key={track.trackNumber} className="mb-4">
                     <p className="mb-1">
@@ -108,8 +113,8 @@ const AdminAlbumTrackPage = () => {
                 ))}
               </Card>
               {dummyAlbumDetails.status === "rejected" && (
-            <Card className="bg-danger text-white mt-4 p-4">
-              <h3 className="mb-3">Rejection Reason</h3>
+                <Card className="bg-danger text-white mt-4 p-4">
+                  <h3 className="mb-3">Rejection Reason</h3>
                   <p>{rejectionReason}</p>
                 </Card>
               )}

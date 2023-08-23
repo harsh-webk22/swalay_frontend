@@ -52,28 +52,17 @@ const AdminAllAlbumsPage = () => {
     },
   ]);
 
-  const handleApproveReject = (albumId, action) => {
-    // Find the album by ID and update its status based on the action
-    const updatedAlbums = albums.map((album) =>
-      album.id === albumId
-        ? { ...album, status: action === "approve" ? "approved" : "rejected" }
-        : album
-    );
-
-    setAlbums(updatedAlbums);
-  };
-
   return (
     <div
-      className="g-sidenav-show bg-gray-200 dark-version text-white"
+      className="g-sidenav-show bg-gray-200 dark-version"
       style={{ minHeight: "98vh" }}
     >
       <Sidebar />
       <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
         <Container fluid>
-          <Row className="mt-3">
+          <Row className=" dark-version mt-3">
             <Col>
-              <Card className="bg-gradient-dark text-white">
+              <Card className="bg-gray-200 dark-version text-white">
                 <div className="d-sm-flex justify-content-between">
                   <Card.Header className="bg-transparent border-bottom border-white">
                     <h5 className="mb-0">All Albums</h5>
@@ -84,7 +73,7 @@ const AdminAllAlbumsPage = () => {
                   <div className="d-flex card-header">
                     <div className="dropdown d-inline">
                       <Button
-                        href="./add_New_Album.html"
+                        href="/admin/add_album"
                         className="mb-0 btn btn-icon bg-gradient-primary"
                       >
                         Add New Album
@@ -98,64 +87,49 @@ const AdminAllAlbumsPage = () => {
                       className="table table-dark table-flush"
                       id="datatable-search"
                     >
-                      <thead className="thead-light">
-                        <tr>
-                          <th>Album Name</th>
-                          <th>Total Tracks</th>
-                          <th>Artist Name</th>
-                          <th>Label</th>
-                          <th>Release Date</th>
-                          <th>Status</th>
-                          <th>Actions</th>
+                      <thead className="thead-light bg-gray-200 dark-version">
+                        <tr className="bg-gray-200 dark-version">
+                          <th className="bg-gray-200 dark-version">
+                            Album Name
+                          </th>
+                          <th className="bg-gray-200 dark-version">
+                            Total Tracks
+                          </th>
+                          <th className="bg-gray-200 dark-version">
+                            Artist Name
+                          </th>
+                          <th className="bg-gray-200 dark-version">Label</th>
+                          <th className="bg-gray-200 dark-version">
+                            Release Date
+                          </th>
+                          <th className="bg-gray-200 dark-version">Status</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody className="bg-gray-200 dark-version">
                         {albums.map((album) => (
-                          <tr key={album.id}>
-                            <td className="text-sm font-weight-normal">
+                          <tr
+                            className="bg-gray-200 dark-version"
+                            key={album.id}
+                          >
+                            <td className="bg-gray-200 dark-version">
                               <Link to={`/album/${album.id}`}>
                                 {album.name}
                               </Link>
                             </td>
-                            <td className="text-sm font-weight-normal">
+                            <td className="bg-gray-200 dark-version">
                               {album.totalTracks}
                             </td>
-                            <td className="text-sm font-weight-normal">
+                            <td className="bg-gray-200 dark-version">
                               {album.artist}
                             </td>
-                            <td className="text-sm font-weight-normal">
+                            <td className="bg-gray-200 dark-version">
                               {album.label}
                             </td>
-                            <td className="text-sm font-weight-normal">
+                            <td className="bg-gray-200 dark-version">
                               {album.releaseDate}
                             </td>
-                            <td className="text-sm font-weight-normal">
+                            <td className="bg-gray-200 dark-version">
                               {album.status}
-                            </td>
-                            <td>
-                              {album.status === "pending" && (
-                                <div>
-                                  <Button
-                                    variant="success"
-                                    className="mr-2"
-                                    onClick={() =>
-                                      handleApproveReject(album.id, "approve")
-                                    }
-                                    disabled={album.status !== "pending"}
-                                  >
-                                    Approve
-                                  </Button>
-                                  <Button
-                                    variant="danger"
-                                    onClick={() =>
-                                      handleApproveReject(album.id, "reject")
-                                    }
-                                    disabled={album.status !== "pending"}
-                                  >
-                                    Reject
-                                  </Button>
-                                </div>
-                              )}
                             </td>
                           </tr>
                         ))}

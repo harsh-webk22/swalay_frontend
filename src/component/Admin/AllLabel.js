@@ -9,11 +9,11 @@ const AdminAllLabels = () => {
       style={{ minHeight: "100vh" }}
     >
       <Sidebar />
-      <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg bg-gray-800">
+      <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <Container fluid className="py-4">
-          <Row>
-            <Col>
-              <Card className="bg-gray-900 text-white">
+          <Row className="dark-version">
+            <Col className="dark-version">
+              <Card className="dark-version text-white">
                 <div className="d-sm-flex justify-content-between">
                   <Card.Header className="bg-transparent border-bottom border-white">
                     <h5 className="mb-0">All Labels</h5>
@@ -35,84 +35,84 @@ const AdminAllLabels = () => {
                     className="table table-dark table-flush"
                     id="datatable-search"
                   >
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Label Name</th>
-                        <th>Artist Name</th>
-                        <th>Email</th>
-                        <th>Joined date</th>
+                    <thead className="thead-light bg-gray-200 dark-version">
+                      <tr className="bg-gray-200 dark-version">
+                        <th className="bg-gray-200 dark-version">#</th>
+                        <th className="bg-gray-200 dark-version">Label Name</th>
+                        <th className="bg-gray-200 dark-version">Artist Name</th>
+                        <th className="bg-gray-200 dark-version">Email</th>
+                        <th className="bg-gray-200 dark-version">Joined date</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td className="text-sm font-weight-normal">1</td>
-                        <td className="text-sm font-weight-normal">
+                    <tbody className="bg-gray-200 dark-version">
+                      <tr className="bg-gray-200 dark-version">
+                        <td className="bg-gray-200 dark-version">1</td>
+                        <td className="bg-gray-200 dark-version">
                           JJSKY Music
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           Sachin Kumar
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           jjskymusic@gmail.com
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           08/05/2023 13:48 PM
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">2</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">2</td>
+                        <td className="bg-gray-200 dark-version">
                           Krishna x Prajapati Pvt. Ltd.
                         </td>
-                        <td className="text-sm font-weight-normal">Krishna</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">Krishna</td>
+                        <td className="bg-gray-200 dark-version">
                           kamalprajapati2025@gmail.com
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           08/05/2023 13:48 PM
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">3</td>
-                        <td className="text-sm font-weight-normal">BeetaBie</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">3</td>
+                        <td className="bg-gray-200 dark-version">BeetaBie</td>
+                        <td className="bg-gray-200 dark-version">
                           Subhankar Sarkar
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           25subhankar@gmail.com
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           08/05/2023 13:48 PM
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">4</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">4</td>
+                        <td className="bg-gray-200 dark-version">
                           Baba Music Tune
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           Aman Kumar
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           amanbabagok@gmail.com
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           08/05/2023 13:48 PM
                         </td>
                       </tr>
                       <tr>
-                        <td className="text-sm font-weight-normal">5</td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">5</td>
+                        <td className="bg-gray-200 dark-version">
                           The AAR music production
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           Ajay Chauhan
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           theaarmusicproduction9@gmail.com
                         </td>
-                        <td className="text-sm font-weight-normal">
+                        <td className="bg-gray-200 dark-version">
                           08/05/2023 13:48 PM
                         </td>
                       </tr>

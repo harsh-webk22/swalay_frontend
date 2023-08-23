@@ -83,7 +83,7 @@ const Sidebar = () => {
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link className="nav-link text-white " to="/add_album">
+                  <Link className="nav-link text-white " to="/album">
                     <span className="sidenav-normal  ms-2  ps-1">
                       {" "}
                       Music Release{" "}
@@ -91,10 +91,7 @@ const Sidebar = () => {
                   </Link>
                 </li>
                 <li className="nav-item ">
-                  <Link
-                    className="nav-link text-white "
-                    to="/payments"
-                  >
+                  <Link className="nav-link text-white " to="/payments">
                     <span className="sidenav-normal  ms-2  ps-1">
                       {" "}
                       Reports{" "}

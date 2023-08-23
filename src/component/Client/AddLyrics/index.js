@@ -1,7 +1,6 @@
-import React from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "../Sidebar";
 
-const AdminLyrics = () => {
+const Lyrics = () => {
   return (
     <div
       className="g-sidenav-show  bg-gray-200 dark-version "
@@ -40,7 +39,7 @@ const AdminLyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline ">
                     <label for="projectName" className="form-label">
-                      Email Address
+                      Song Name 
                     </label>
                     <input
                       type="text"
@@ -52,7 +51,7 @@ const AdminLyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
-                      Phone Number
+                      Artist Name 
                     </label>
                     <input
                       type="text"
@@ -99,12 +98,12 @@ const AdminLyrics = () => {
                 </div>
 
                 <label className="form-label h5 ms-4 mt-2 ">
-                  <u>
-                    <b>Upload file</b>
-                  </u>
-                </label>
+                    <u>
+                      <b>Upload file</b>
+                    </u>
+                  </label>
 
-                <div className="input-group input-group-outline">
+                <div className="input-group input-group-outline">                 
                   <form
                     action="/file-upload"
                     className="form-control dropzone  m-4 "
@@ -204,4 +203,4 @@ const AdminLyrics = () => {
   );
 };
 
-export default AdminLyrics;
+export default Lyrics;
