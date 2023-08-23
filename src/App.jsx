@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "./component/Client/Dashboard";
 import Album from "./component/Client/Album";
-import Lyrics from "./component/Client/AddLyrics";
+import Lyrics from "./component/Client/Lyrics";
 import Login from "./component/Client/Login";
 import AddAlbum from "./component/Client/AddAlbum";
 import ViewTrack from "./component/Client/Track/ViewTrack";
