@@ -1,7 +1,7 @@
 import React from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "../Sidebar";
 
-const AdminLyrics = () => {
+const AddNewTrack = () => {
   return (
     <div
       className="g-sidenav-show  bg-gray-200 dark-version "
@@ -18,17 +18,14 @@ const AdminLyrics = () => {
             <div className="col-lg-10 col-10 mx-auto position-relative">
               <div className="card">
                 <div className="card-header p-3 pt-4">
-                  <div className="icon icon-lg icon-shape bg-gradient-dark shadow text-center border-radius-xl mt-n1 me-4 float-start">
-                    <i className="material-icons opacity-10">lyrics</i>
-                  </div>
                   <h3 className="mb-0 text-align center">
-                    <b>Lyrics</b>
+                    <b>AddNewTrack</b>
                   </h3>
                 </div>
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
-                      Order Number/Label Name
+                      Track Title
                     </label>
                     <input
                       type="text"
@@ -40,7 +37,7 @@ const AdminLyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline ">
                     <label for="projectName" className="form-label">
-                      Email Address
+                      Composer
                     </label>
                     <input
                       type="text"
@@ -52,7 +49,7 @@ const AdminLyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
-                      Phone Number
+                      ISRC
                     </label>
                     <input
                       type="text"
@@ -64,7 +61,7 @@ const AdminLyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline ">
                     <label for="projectName" className="form-label">
-                      ISRC Code (if aplicable)
+                      Singer
                     </label>
                     <input
                       type="text"
@@ -76,7 +73,7 @@ const AdminLyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
-                      Writer Name
+                      Lyricist
                     </label>
                     <input
                       type="text"
@@ -88,7 +85,7 @@ const AdminLyrics = () => {
                 <div className="card-body pt-2">
                   <div className="input-group input-group-outline">
                     <label for="projectName" className="form-label">
-                      Language Of Lyrics
+                      Music Producer
                     </label>
                     <input
                       type="text"
@@ -97,10 +94,45 @@ const AdminLyrics = () => {
                     />
                   </div>
                 </div>
-
+                <div className="card-body pt-2">
+                  <div className="input-group input-group-outline">
+                    <label for="projectName" className="form-label">
+                      Caller Tune Time(HH:MM:SS)
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="projectName"
+                    />
+                  </div>
+                </div>
+                <div className="card-body pt-2">
+                  <div className="input-group input-group-outline">
+                    <label for="projectName" className="form-label">
+                      Drive File URL (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="projectName"
+                    />
+                  </div>
+                </div>
+                <div className="card-body pt-2">
+                  <div className="input-group input-group-outline">
+                    <label for="projectName" className="form-label">
+                      Music Producer
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="projectName"
+                    />
+                  </div>
+                </div>
                 <label className="form-label h5 ms-4 mt-2 ">
                   <u>
-                    <b>Upload file</b>
+                    <b>Audio File (Max 128M)</b>
                   </u>
                 </label>
 
@@ -115,6 +147,7 @@ const AdminLyrics = () => {
                     </div>
                   </form>
                 </div>
+
                 <div className="d-flex justify-content-end mt-4">
                   <button
                     type="button"
@@ -204,4 +237,4 @@ const AdminLyrics = () => {
   );
 };
 
-export default AdminLyrics;
+export default AddNewTrack;

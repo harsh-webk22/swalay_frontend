@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Card, Table, Button } from "react-bootstrap";
-import Sidebar from "../Sidebar";
+import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 
 const AdminAllAlbumsPage = () => {
-  const [albums, ] = useState([
+  const [albums, setAlbums] = useState([
     {
       id: 1,
       name: "Maan Meri Jaan 1",
       totalTracks: 50,
-      artist: "Admin",
+      artist: "superAdmin",
       label: "61",
       releaseDate: "2011/04/25",
       status: "pending",
@@ -18,7 +18,7 @@ const AdminAllAlbumsPage = () => {
       id: 2,
       name: "Maan Meri Jaan 2",
       totalTracks: 50,
-      artist: "Admin",
+      artist: "superAdmin",
       label: "61",
       releaseDate: "2011/04/25",
       status: "pending",
@@ -27,7 +27,7 @@ const AdminAllAlbumsPage = () => {
       id: 3,
       name: "Maan Meri Jaan 3",
       totalTracks: 50,
-      artist: "Admin",
+      artist: "superAdmin",
       label: "61",
       releaseDate: "2011/04/25",
       status: "pending",
@@ -36,7 +36,7 @@ const AdminAllAlbumsPage = () => {
       id: 4,
       name: "Maan Meri Jaan 4",
       totalTracks: 50,
-      artist: "Admin",
+      artist: "superAdmin",
       label: "61",
       releaseDate: "2011/04/25",
       status: "pending",
@@ -45,7 +45,7 @@ const AdminAllAlbumsPage = () => {
       id: 5,
       name: "Maan Meri Jaan 5",
       totalTracks: 50,
-      artist: "Admin",
+      artist: "superAdmin",
       label: "61",
       releaseDate: "2011/04/25",
       status: "pending",
@@ -73,7 +73,7 @@ const AdminAllAlbumsPage = () => {
                   <div className="d-flex card-header">
                     <div className="dropdown d-inline">
                       <Button
-                        href="./add_album"
+                        href="/superAdmin/add_album"
                         className="mb-0 btn btn-icon bg-gradient-primary"
                       >
                         Add New Album

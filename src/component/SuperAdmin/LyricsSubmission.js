@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 
-import { Container, Row, Col, Card, Button, Table } from "react-bootstrap";
+import { Container, Row, Col, Card,  Table } from "react-bootstrap";
 
 function AdminLyricsSubmission() {
-  const [submissions, setSubmissions] = useState([
+  const [submissions, ] = useState([
     {
       id: 1,
       songName: "JJSKY Music",
@@ -50,27 +50,9 @@ function AdminLyricsSubmission() {
     // Add more submissions here...
   ]);
 
-  const handleApprove = (id) => {
-    // Update the status of the submission with the given ID to "Approved"
-    setSubmissions((prevSubmissions) =>
-      prevSubmissions.map((submission) =>
-        submission.id === id
-          ? { ...submission, status: "Approved" }
-          : submission
-      )
-    );
-  };
 
-  const handleReject = (id) => {
-    // Update the status of the submission with the given ID to "Rejected"
-    setSubmissions((prevSubmissions) =>
-      prevSubmissions.map((submission) =>
-        submission.id === id
-          ? { ...submission, status: "Rejected" }
-          : submission
-      )
-    );
-  };
+
+  
 
   return (
     <div className="g-sidenav-show  bg-gray-200 dark-version">
