@@ -10,6 +10,8 @@ import AddTrack from "./component/Client/Track/AddTrack";
 import Payment from "./component/Client/Payment";
 import AddLabel from "./component/Admin/AddLabel";
 import Profile from "./component/Client/Profile";
+import ADDLyrics from "./component/Client/AddLyrics";
+
 import AdminDashboard from "./component/Admin/Dashboard";
 import AdminAlbumTrackPage from "./component/Admin/AlbumTrackPage";
 import AdminAllAlbumsPage from "./component/Admin/AllAlbumPage";
@@ -18,12 +20,12 @@ import AdminAllLabel from "./component/Admin/AllLabel";
 import AdminAllPayment from "./component/Admin/All_Payment";
 import AdminInstagramLinkingForm from "./component/Admin/Instagram";
 import AdminLyrics from "./component/Admin/Lyrics";
-import ADDLyrics from "./component/Client/AddLyrics";
 import AdminLyricsSubmission from "./component/Admin/LyricsSubmission";
 import AdminArtistProfile from "./component/Admin/ArtistProfile";
 import AdminPublishNotification from "./component/Admin/PublishNotification";
 import AdminProfile from "./component/Admin/AdminProfile";
 import AddNewTrack from "./component/Admin/AddNewTrack";
+
 import SuperAdminDashboard from "./component/SuperAdmin/Dashboard";
 import SuperAdminAlbumTrackPage from "./component/SuperAdmin/AlbumTrackPage";
 import SuperAdminAllAlbumsPage from "./component/SuperAdmin/AllAlbumPage";
