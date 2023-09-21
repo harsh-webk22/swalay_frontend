@@ -2,7 +2,7 @@ import { useState } from "react";
 import { apiendpoint } from "../../helper/apiendpoint";
 import { langArr, genreArray } from "../../helper/utilArray";
 import Dropdown from "../../Dropdown";
-import Footer from "../../Footer";
+import Footer from "../Footer";
 import Sidebar from "../Sidebar";
 
 const AddAlbum = () => {
